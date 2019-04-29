@@ -11,10 +11,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".controllers.activities.PromoActivity"
+                  android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+        </activity>
         <activity
                 android:name=".controllers.activities.MainActivity"
-                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-                android:label="@string/title_activity_main">
+                android:label="@string/title_activity_main"
+                android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         </activity>
         <activity android:name=".controllers.activities.LoginActivity">
             <intent-filter>

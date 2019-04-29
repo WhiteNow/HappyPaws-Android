@@ -1,5 +1,7 @@
 package pe.edu.upc.happypaws.adapters
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.widget.ANImageView
 import kotlinx.android.synthetic.main.layout_promo_item.view.*
 import pe.edu.upc.happypaws.R
+import pe.edu.upc.happypaws.controllers.activities.PromoActivity
 import pe.edu.upc.happypaws.models.Promo
 
 class PromosAdapter(private var promos: List<Promo>):
@@ -19,6 +22,16 @@ class PromosAdapter(private var promos: List<Promo>):
         }
         fun bindTo(item: Promo) {
             imageView.setImageUrl(item.photo_url)
+
+            imageView.setOnClickListener {
+                val bundle = Bundle()
+                bundle.apply {
+                    putString("url", item.photo_url)
+                }
+                val intent = Intent(it.context, PromoActivity::class.java)
+                intent.putExtras(bundle)
+                it.context.startActivity(intent)
+            }
         }
 
     }
