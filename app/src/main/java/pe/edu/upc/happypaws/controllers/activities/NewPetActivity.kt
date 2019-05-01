@@ -1,5 +1,7 @@
 package pe.edu.upc.happypaws.controllers.activities
 
+import pe.edu.upc.happypaws.R
+
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +19,7 @@ class NewPetActivity : AppCompatActivity(), NewPetStep1.OnFragmentInteractionLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_pet)
+
         val fragmentAdapter = PetPagerAdapter(supportFragmentManager)
         viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
@@ -24,6 +27,7 @@ class NewPetActivity : AppCompatActivity(), NewPetStep1.OnFragmentInteractionLis
 
     override fun onFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 }

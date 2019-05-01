@@ -14,6 +14,12 @@
 
         <activity android:name=".controllers.activities.PromoActivity"
                   android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+
+        <meta-data
+                android:name="com.google.android.actions"/>
+
+        <activity android:name=".controllers.activities.NewPetActivity">
+
         </activity>
         <activity
                 android:name=".controllers.activities.PetProfileScrollingActivity"

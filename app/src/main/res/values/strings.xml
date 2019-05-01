@@ -10,6 +10,7 @@
 
     <string name="promo_title">Promociones</string>
 
+
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_pet_profile_scrolling">PetProfileScrollingActivity</string>
     <string name="large_text">
