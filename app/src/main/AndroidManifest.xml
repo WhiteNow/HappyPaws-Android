@@ -11,6 +11,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+
         <activity android:name=".controllers.activities.PromoActivity"
                   android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
         </activity>
@@ -30,21 +31,12 @@
         </activity>
         <activity android:name=".controllers.activities.EditProfileActivity">
         </activity>
-        <activity
-                android:name=".controllers.activities.PetProfileScrollingActivity"
-                android:label="@string/title_activity_pet_profile_scrolling"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".controllers.activities.PetProfileActivity">
-        </activity>
-        <activity
-                android:name=".controllers.activities.SignUpActivity"
-                android:label="@string/title_activity_sign_up"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".controllers.activities.Main2Activity">
-        </activity>
-        <activity android:name=".controllers.activities.EditProfileActivity">
+
+        <meta-data
+                android:name="com.google.android.actions"/>
+
+        <activity android:name=".controllers.activities.NewPetActivity">
+
         </activity>
         <activity
                 android:name=".controllers.activities.MainActivity"
