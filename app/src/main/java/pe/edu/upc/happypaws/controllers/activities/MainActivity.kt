@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         navigateTo(navigation.menu.findItem(R.id.navigation_profile))
-        startActivity(Intent(this@MainActivity,NewPetActivity::class.java))
+//        startActivity(Intent(this@MainActivity,NewPetActivity::class.java))
     }
 
     private fun getFragmentFor(item: MenuItem) : Fragment {
