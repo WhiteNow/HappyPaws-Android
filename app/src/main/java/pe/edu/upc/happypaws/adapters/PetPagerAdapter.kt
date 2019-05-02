@@ -1,4 +1,4 @@
-package pe.edu.upc.happypaws.controllers.adapters
+package pe.edu.upc.happypaws.adapters
 
 import android.content.Context
 import androidx.fragment.app.Fragment
@@ -33,10 +33,10 @@ class PetPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
-            0 -> "Paso 1"
-            1 -> "Paso 2"
+            0 -> "1"
+            1 -> "2"
             else -> {
-                return "Paso 3"
+                return "3"
             }
         }
     }
