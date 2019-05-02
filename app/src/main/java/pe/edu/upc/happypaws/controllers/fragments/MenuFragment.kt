@@ -21,10 +21,14 @@ import kotlinx.android.synthetic.main.fragment_menu.view.*
 import kotlinx.android.synthetic.main.fragment_store.*
 
 import pe.edu.upc.happypaws.R
+
 import pe.edu.upc.happypaws.adapters.MenuAdapter
 import pe.edu.upc.happypaws.models.Pet
 import pe.edu.upc.happypaws.networking.HappyPawsApi
 import pe.edu.upc.happypaws.networking.PetsResponse
+
+import pe.edu.upc.happypaws.controllers.activities.NewPetActivity
+
 
 
 class MenuFragment : Fragment() {
@@ -41,7 +45,6 @@ class MenuFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -80,6 +83,5 @@ class MenuFragment : Fragment() {
                 })
 
     }
-
 
 }

@@ -12,14 +12,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
+
         <activity android:name=".controllers.activities.PromoActivity"
-                  android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+                  android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"/>
 
         <meta-data
                 android:name="com.google.android.actions"/>
 
-        <activity android:name=".controllers.activities.NewPetActivity">
-
+        <activity android:name=".controllers.activities.NewPetActivity"
+                  android:label = "Nueva Mascota">
         </activity>
         <activity
                 android:name=".controllers.activities.PetProfileScrollingActivity"

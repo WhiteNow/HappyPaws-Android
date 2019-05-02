@@ -1,12 +1,12 @@
 package pe.edu.upc.happypaws.controllers.activities
 
+
 import pe.edu.upc.happypaws.R
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_new_pet.*
-import pe.edu.upc.happypaws.R
 import pe.edu.upc.happypaws.controllers.adapters.PetPagerAdapter
 import pe.edu.upc.happypaws.controllers.fragments.NewPetStep1
 import pe.edu.upc.happypaws.controllers.fragments.NewPetStep2
