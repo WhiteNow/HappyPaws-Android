@@ -1,4 +1,4 @@
-package pe.edu.upc.happypaws.controllers.fragments.NewPetFragments
+package pe.edu.upc.happypaws.controllers.fragments
 
 import android.content.Context
 import android.net.Uri

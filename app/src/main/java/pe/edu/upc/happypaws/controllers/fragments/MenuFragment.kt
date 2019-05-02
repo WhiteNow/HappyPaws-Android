@@ -1,6 +1,7 @@
 package pe.edu.upc.happypaws.controllers.fragments
 
 
+
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -24,6 +25,7 @@ import pe.edu.upc.happypaws.adapters.MenuAdapter
 import pe.edu.upc.happypaws.models.Pet
 import pe.edu.upc.happypaws.networking.HappyPawsApi
 import pe.edu.upc.happypaws.networking.PetsResponse
+
 
 class MenuFragment : Fragment() {
 
@@ -53,7 +55,8 @@ class MenuFragment : Fragment() {
             .setPriority(Priority.LOW)
             .setTag(TAG)
             .build()
-            .getAsObject(PetsResponse::class.java,
+            .getAsObject(
+                PetsResponse::class.java,
                 object: ParsedRequestListener<PetsResponse> {
                     override fun onResponse(response: PetsResponse?) {
                         response?.apply {
@@ -77,5 +80,6 @@ class MenuFragment : Fragment() {
                 })
 
     }
+
 
 }
