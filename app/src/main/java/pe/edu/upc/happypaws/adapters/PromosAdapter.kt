@@ -21,6 +21,7 @@ class PromosAdapter(private var promos: List<Promo>):
             imageView = promoView.promo_imageview
         }
         fun bindTo(item: Promo) {
+            imageView.setDefaultImageResId(R.drawable.camera)
             imageView.setImageUrl(item.photo_url)
 
             imageView.setOnClickListener {

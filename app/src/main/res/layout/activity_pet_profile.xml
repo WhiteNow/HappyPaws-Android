@@ -178,7 +178,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/textViewBirth"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="@+id/imageButton6"
             app:layout_constraintStart_toStartOf="@+id/imageButton6"
@@ -188,7 +188,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView11"
+            android:id="@+id/textViewAge"
             app:layout_constraintEnd_toEndOf="@+id/imageButton4"
             app:layout_constraintStart_toStartOf="@+id/imageButton4"
             app:layout_constraintHorizontal_bias="0.4"
@@ -244,7 +244,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView12"
+            android:id="@+id/textViewWeigth"
             app:layout_constraintTop_toBottomOf="@+id/textView6" app:layout_constraintEnd_toEndOf="@+id/imageButton3"
             app:layout_constraintStart_toStartOf="@+id/imageButton3" android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.6"/>
@@ -252,7 +252,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView14"
+            android:id="@+id/textViewDisease"
             app:layout_constraintTop_toBottomOf="@+id/textView7" app:layout_constraintEnd_toEndOf="@+id/imageButton2"
             app:layout_constraintStart_toStartOf="@+id/imageButton2" android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.4"/>
@@ -260,7 +260,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView15" android:layout_marginTop="8dp"
+            android:id="@+id/textViewVacuna" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:layout_constraintStart_toStartOf="@+id/imageButton5"
             app:layout_constraintEnd_toEndOf="@+id/imageButton5"/>
@@ -268,7 +268,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView16"
+            android:id="@+id/textViewCirugia"
             app:layout_constraintTop_toBottomOf="@+id/textView9" app:layout_constraintEnd_toEndOf="@+id/imageButton"
             app:layout_constraintStart_toStartOf="@+id/imageButton" android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.6"/>
