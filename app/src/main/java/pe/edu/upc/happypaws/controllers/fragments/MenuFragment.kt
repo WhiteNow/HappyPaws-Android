@@ -1,12 +1,15 @@
 package pe.edu.upc.happypaws.controllers.fragments
 
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.androidnetworking.AndroidNetworking
@@ -19,11 +22,19 @@ import kotlinx.android.synthetic.main.fragment_menu.*
 import kotlinx.android.synthetic.main.fragment_menu.view.*
 import kotlinx.android.synthetic.main.fragment_store.*
 
+import kotlinx.android.synthetic.main.fragment_menu.*
+
+
 import pe.edu.upc.happypaws.R
+
 import pe.edu.upc.happypaws.adapters.MenuAdapter
 import pe.edu.upc.happypaws.models.Pet
 import pe.edu.upc.happypaws.networking.HappyPawsApi
 import pe.edu.upc.happypaws.networking.PetsResponse
+
+import pe.edu.upc.happypaws.controllers.activities.NewPetActivity
+
+
 
 class MenuFragment : Fragment() {
 
@@ -35,11 +46,12 @@ class MenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_menu, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -53,7 +65,8 @@ class MenuFragment : Fragment() {
             .setPriority(Priority.LOW)
             .setTag(TAG)
             .build()
-            .getAsObject(PetsResponse::class.java,
+            .getAsObject(
+                PetsResponse::class.java,
                 object: ParsedRequestListener<PetsResponse> {
                     override fun onResponse(response: PetsResponse?) {
                         response?.apply {
@@ -75,6 +88,12 @@ class MenuFragment : Fragment() {
                     }
 
                 })
+
+
+        newPetFloatingActionButton.setOnClickListener {
+            startActivity(Intent(this@MenuFragment.context,NewPetActivity::class.java))
+
+        }
 
     }
 

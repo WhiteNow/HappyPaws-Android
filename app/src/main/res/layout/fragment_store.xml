@@ -127,51 +127,6 @@
 
            </RelativeLayout>
 
-
-           <RelativeLayout
-                   android:id="@+id/others_container"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:layout_below="@id/food_container"
-                   android:layout_marginTop="20dp"
-                   android:layout_marginBottom="20dp"
-                   android:background="#fff">
-
-               <TextView
-                       android:id="@+id/others_text"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Comida"
-                       android:textSize="25sp"
-                       android:textColor="#000"
-                       android:fontFamily="@font/baloo"
-                       android:layout_marginTop="@dimen/default_start_margin"
-                       android:layout_marginStart="@dimen/default_start_margin"
-               />
-
-               <TextView
-                       android:id="@+id/more_others_btn"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="ver mas"
-                       android:textSize="20sp"
-                       android:fontFamily="@font/baloo"
-                       android:layout_alignEnd="@id/others_recycler"
-                       android:layout_marginEnd="@dimen/default_start_margin"
-                       android:layout_marginTop="@dimen/default_start_margin"
-
-               />
-
-               <androidx.recyclerview.widget.RecyclerView
-                       android:id="@+id/others_recycler"
-                       android:layout_below="@id/others_text"
-                       android:layout_width="match_parent"
-                       android:layout_height="120dp"
-                       android:orientation="horizontal"
-                       android:layout_marginBottom="@dimen/default_start_margin"
-               />
-
-           </RelativeLayout>
        </RelativeLayout>
 
    </ScrollView>

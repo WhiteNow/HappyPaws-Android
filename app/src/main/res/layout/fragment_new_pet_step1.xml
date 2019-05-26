@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+
+                                                   tools:context=".controllers.fragments.NewPetStep1"
+
+                                                   android:id="@+id/newPetStep1Layout">
+
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/tortuga"
+            android:layout_width="107dp"
+
+            android:layout_height="50dp"
+            android:id="@+id/btnTurtle"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector"
+            android:textStyle="bold" app:layout_constraintTop_toBottomOf="@+id/btnDog" android:layout_marginTop="25dp"
+
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnBunny"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/ave"
+            android:layout_width="107dp"
+            android:layout_height="60dp"
+            android:id="@+id/btnBird"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold" app:layout_constraintTop_toTopOf="@+id/btnBunny"
+            app:layout_constraintBottom_toBottomOf="@+id/btnBunny" app:layout_constraintStart_toEndOf="@+id/btnBunny"
+            android:layout_marginStart="20dp"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/conejo"
+            android:layout_width="107dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/btnBunny"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/btnTurtle"
+            app:layout_constraintBottom_toBottomOf="@+id/btnTurtle" app:layout_constraintStart_toStartOf="@+id/btnCat"
+            app:layout_constraintEnd_toEndOf="@+id/btnCat" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="1.0"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/gato"
+            android:layout_width="107dp"
+            android:layout_height="50dp"
+            android:id="@+id/btnCat"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/btnDog"
+            app:layout_constraintBottom_toBottomOf="@+id/btnDog"
+            app:layout_constraintVertical_bias="1.0" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/pez"
+            android:layout_width="107dp"
+
+            android:layout_height="50dp"
+            android:id="@+id/btnFish"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+
+
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/newPetStep1ButtonNext" android:layout_marginTop="25dp"
+
+            app:layout_constraintTop_toBottomOf="@+id/btnTurtle"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/roedor"
+            android:layout_width="107dp"
+
+            android:layout_height="50dp"
+
+            android:id="@+id/btnRodent"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/btnFish"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFish"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintEnd_toEndOf="@+id/newPetStep1ButtonNext"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/hamster"
+            android:layout_width="107dp"
+
+            android:layout_height="50dp"
+
+            android:id="@+id/btnHamster"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@+id/btnCat"
+            app:layout_constraintBottom_toBottomOf="@+id/btnCat"
+            app:layout_constraintStart_toEndOf="@+id/btnCat"
+            android:layout_marginStart="20dp"/>
+    <RadioButton
+            android:background="@drawable/radio_button_selector"
+            android:text="@string/perro"
+            android:layout_width="107dp"
+
+            android:layout_height="50dp"
+
+            android:id="@+id/btnDog"
+            android:button="@android:color/transparent" android:textSize="20sp" android:textAlignment="center"
+            android:textColor="@drawable/radio_button_text_selector" android:textStyle="bold"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnCat" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTipoMascota"/>
+
+    <Button
+            android:text="Siguiente"
+            android:layout_width="234dp"
+            android:layout_height="70dp"
+            android:id="@+id/newPetStep1ButtonNext"
+            android:backgroundTint="#A9CCBD"
+            android:textColor="@android:color/white" android:textSize="24sp"
+            android:fontFamily="sans-serif" android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@+id/btnFish"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:background="@drawable/btn_roundshape"
+    />
+
+    <ImageView
+            android:layout_width="172dp"
+            android:layout_height="136dp" app:srcCompat="@mipmap/ic_launcher"
+            android:id="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent" android:contentDescription="TODO"/>
+    <TextView
+            android:text="Tipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTipoMascota" android:textSize="30sp"
+
+            android:layout_marginTop="20dp"
+
+
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"/>
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="348dp"
+            android:layout_height="55dp"
+            android:id="@+id/textInputLayout"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Nombre de la mascota" android:textSize="24sp" android:id="@+id/textInputNombreMascota"
+                android:textAlignment="center" android:gravity="center"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
