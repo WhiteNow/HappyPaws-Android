@@ -5,11 +5,10 @@ import android.os.Parcelable
 
 data class Pet(val _id: String, val name: String, val species: String,
                val birthdate: String, val gender: String, val weight: String,
-               val vaccination: String, val desease: String, val surgery: String,
-               val owner_id: String, val __v: String): Parcelable {
+               val vaccination: String, val disease: String, val surgery: String,
+               val owner_id: String): Parcelable {
 
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -23,7 +22,7 @@ data class Pet(val _id: String, val name: String, val species: String,
     )
 
     constructor(): this("","","","","",
-        "", "", "","", "", "")
+        "", "", "","", "")
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(_id)
@@ -33,10 +32,9 @@ data class Pet(val _id: String, val name: String, val species: String,
         parcel.writeString(gender)
         parcel.writeString(weight)
         parcel.writeString(vaccination)
-        parcel.writeString(desease)
+        parcel.writeString(disease)
         parcel.writeString(surgery)
         parcel.writeString(owner_id)
-        parcel.writeString(__v)
     }
 
     override fun describeContents(): Int {
