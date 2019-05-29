@@ -24,6 +24,9 @@ class SignInActivity : AppCompatActivity() {
             val account = editTextAccount.text.toString()
             val password = editTextPasswordIn.text.toString()
             signIn(account, password)
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -32,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
         if( !email.isNullOrEmpty() && !password.isNullOrEmpty()) {
             Log.i("Jacobo", email)
             Log.i("Jacobo", password)
-            AndroidNetworking.post(HappyPawsApi.signIn()).addHeaders("Content-Type", "application/json")
+            AndroidNetworking.post(HappyPawsApi.signIn()).addHeaders("Content-type", "application/json")
                 .addBodyParameter("email", email)
                 .addBodyParameter("password", password)
                 .setTag("test")
@@ -57,7 +60,7 @@ class SignInActivity : AppCompatActivity() {
                     }
 
                     override fun onError(anError: ANError?) {
-                        Log.e("Jacobo", "seequivoco")
+                        Log.e("Jacobo", anError?.message.toString())
                     }
                 })
         }
