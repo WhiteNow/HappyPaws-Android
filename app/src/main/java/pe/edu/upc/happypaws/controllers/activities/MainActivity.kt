@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_menu.*
 import pe.edu.upc.happypaws.R
 import pe.edu.upc.happypaws.controllers.fragments.MenuFragment
 import pe.edu.upc.happypaws.controllers.fragments.ProfileFragment
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
       navigateTo(item)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
