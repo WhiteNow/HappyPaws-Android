@@ -14,6 +14,9 @@ class HappyPawsApi {
         fun adsUrl(): String {
             return "${BASE_URL}/advertisements"
         }
+        fun signIn(): String {
+            return "${BASE_URL}/account/signin"
+        }
 
     }
 }
