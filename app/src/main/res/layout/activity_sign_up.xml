@@ -20,6 +20,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="50dp"/>
 
+
     <TextView
             android:id="@+id/textViewName"
             android:text="Nombre"

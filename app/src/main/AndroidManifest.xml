@@ -11,13 +11,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-
-
-        <activity android:name=".controllers.activities.PromoActivity"
-                  android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"/>
-
-        <activity android:name=".controllers.activities.NewPetActivity"
-                  android:label = "Nueva Mascota">
+        <activity android:name=".controllers.activities.ListTasksActivity">
+        </activity>
+        <activity android:name=".controllers.activities.ListTaskActivity">
+        </activity>
+        <activity android:name=".controllers.activities.AddTaskActivity">
+        </activity>
+        <activity android:name=".controllers.activities.SignInActivity">
+        </activity>
+        <activity
+                android:name=".controllers.activities.PromoActivity"
+                android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"/>
+        <activity
+                android:name=".controllers.activities.NewPetActivity"
+                android:label="Nueva Mascota">
         </activity>
         <activity android:name=".controllers.activities.PetProfileActivity">
         </activity>
@@ -26,17 +33,16 @@
                 android:label="@string/title_activity_sign_up"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
         <activity android:name=".controllers.activities.EditProfileActivity">
         </activity>
-
         <activity
                 android:name=".controllers.activities.MainActivity"
                 android:label="@string/title_activity_main"
                 android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         </activity>
-        <activity android:name=".controllers.activities.LoginActivity"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+                android:name=".controllers.activities.LoginActivity"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
