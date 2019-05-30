@@ -28,6 +28,7 @@ import kotlinx.android.synthetic.main.fragment_menu.*
 import pe.edu.upc.happypaws.R
 
 import pe.edu.upc.happypaws.adapters.MenuAdapter
+import pe.edu.upc.happypaws.controllers.activities.AddTaskActivity
 import pe.edu.upc.happypaws.models.Pet
 import pe.edu.upc.happypaws.networking.HappyPawsApi
 import pe.edu.upc.happypaws.networking.PetsResponse
@@ -56,6 +57,10 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getPets()
+        button_task.setOnClickListener {
+            val intent = Intent(activity, AddTaskActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun getPets() {
