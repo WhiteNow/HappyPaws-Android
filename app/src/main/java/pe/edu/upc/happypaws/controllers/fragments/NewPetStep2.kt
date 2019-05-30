@@ -15,6 +15,9 @@ import java.util.*
 import android.app.DatePickerDialog
 import android.widget.DatePicker
 import java.text.SimpleDateFormat
+import android.widget.LinearLayout
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,7 +59,7 @@ class NewPetStep2 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         newPetStep2ButtonNext.setOnClickListener {
-            (activity as NewPetActivity).swipeRight()
+            (activity as NewPetActivity).swipeToPage3()
         }
 
 
@@ -86,7 +89,7 @@ class NewPetStep2 : Fragment() {
     }
 
     private fun updateDateInView() {
-        val myFormat = "MM/dd/yyyy" // mention the format you need
+        val myFormat = "yyyy/MM/dd" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         datePickerTextView!!.text = sdf.format(cal.getTime())
     }

@@ -3,12 +3,20 @@ package pe.edu.upc.happypaws.controllers.fragments
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import kotlinx.android.synthetic.main.fragment_new_pet_step3.*
+import org.json.JSONException
+import org.json.JSONObject
 
 import pe.edu.upc.happypaws.R
+import pe.edu.upc.happypaws.controllers.activities.NewPetActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,6 +54,12 @@ class NewPetStep3 : Fragment() {
         return inflater.inflate(R.layout.fragment_new_pet_step3, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        newPetStep3ButtonFinish.setOnClickListener {
+            (activity as NewPetActivity).saveAndComplete()
+        }
+    }
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)

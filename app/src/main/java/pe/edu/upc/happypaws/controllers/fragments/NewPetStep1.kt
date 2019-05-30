@@ -60,7 +60,7 @@ class NewPetStep1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         newPetStep1ButtonNext.setOnClickListener {
-            (activity as NewPetActivity).swipeRight()
+            (activity as NewPetActivity).swipeToPage2()
         }
 
 
