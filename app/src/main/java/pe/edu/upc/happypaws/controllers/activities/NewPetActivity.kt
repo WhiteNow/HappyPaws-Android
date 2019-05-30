@@ -7,7 +7,6 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.RadioButton
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_new_pet.*
 import kotlinx.android.synthetic.main.fragment_new_pet_step1.*
@@ -21,16 +20,26 @@ import pe.edu.upc.happypaws.controllers.fragments.NewPetStep1
 import pe.edu.upc.happypaws.controllers.fragments.NewPetStep2
 import pe.edu.upc.happypaws.controllers.fragments.NewPetStep3
 import pe.edu.upc.happypaws.models.Pet
-import android.widget.RadioGroup
 import android.view.MotionEvent
-import android.view.View.OnTouchListener
 import android.widget.LinearLayout
 import android.view.View
+import com.android.volley.toolbox.JsonObjectRequest
+import com.androidnetworking.error.ANError
+import com.androidnetworking.AndroidNetworking
+import com.androidnetworking.common.Priority
+import com.androidnetworking.interfaces.ParsedRequestListener
+import com.android.volley.Response
+import com.android.volley.toolbox.Volley
+import org.json.JSONException
+import org.json.JSONObject
+import pe.edu.upc.happypaws.networking.HappyPawsApi
 
 
 class NewPetActivity : AppCompatActivity(),NewPetStep1.OnFragmentInteractionListener, NewPetStep2.OnFragmentInteractionListener, NewPetStep3.OnFragmentInteractionListener{
 
 
+    var genderRadioButtonText = "Masculino"
+    var speciesRadioButtonText = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +58,22 @@ class NewPetActivity : AppCompatActivity(),NewPetStep1.OnFragmentInteractionList
                 }
             })
         }
+
+       /* speciesRadioGroup.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+            val radio: RadioButton = findViewById(checkedId)
+            speciesRadioButtonText = radio.text.toString()
+
+        })
+
+        genderRadioGroup.setOnCheckedChangeListener(
+            RadioGroup.OnCheckedChangeListener { group, checkedId ->
+                val radio: RadioButton = findViewById(checkedId)
+                genderRadioButtonText = radio.text.toString()
+
+            })*/
+
+
     }
 
 
@@ -65,13 +90,14 @@ class NewPetActivity : AppCompatActivity(),NewPetStep1.OnFragmentInteractionList
     }
 
     fun swipeToPage3() {
-        if (datePickerTextView.text.toString() != "--/--/----" && textWeight.text.toString().isNotEmpty()) {
+        if (datePickerTextView.text.toString() != "----/--/--" && textWeight.text.toString().isNotEmpty()) {
             viewPager.currentItem = 2
         }
     }
 
     fun saveAndComplete() {
         if (textVaccines.text.toString().isNotEmpty() && textDisease.text.toString().isNotEmpty() && textSurgeries.text.toString().isNotEmpty()) {
+            savePet()
             finish()
         }
     }
@@ -83,13 +109,100 @@ class NewPetActivity : AppCompatActivity(),NewPetStep1.OnFragmentInteractionList
     }
 
     fun createPet(){
-        val genderRadioButton = findViewById<RadioButton>(genderRadioGroup.checkedRadioButtonId)
-        val speciesRadioButton = findViewById<RadioButton>(speciesRadioGroup.checkedRadioButtonId)
-        val pet = Pet("" ,textInputPetName.text.toString(), speciesRadioButton.text.toString(), datePickerTextView.text.toString(), genderRadioButton.text.toString(), textWeight.text.toString(), textVaccines.text.toString(), textDisease.text.toString(), textSurgeries.text.toString(), "" )
+        val pet = Pet("" ,textInputPetName.text.toString(), speciesRadioButtonText, datePickerTextView.text.toString(), genderRadioButtonText, textWeight.text.toString(), textVaccines.text.toString(), textDisease.text.toString(), textSurgeries.text.toString(), "5ceb24113fa85600178719f5" )
+        Log.d("species",speciesRadioButtonText)
+        Log.d("gender", genderRadioButtonText)
+
+        AndroidNetworking.post("https://happy-paws-api.herokuapp.com/api/pets")
+            .addHeaders("Content-Type", "application/json")
+            .addHeaders("Authorization", HappyPawsApi.API_KEY)
+            .addBodyParameter("name", pet.name)
+            .addBodyParameter("species", pet.species)
+            .addBodyParameter("birthdate", pet.birthdate)
+            .addBodyParameter("gender", pet.gender)
+            .addBodyParameter("weight", pet.weight)
+            .addBodyParameter("disease", pet.disease)
+            .addBodyParameter("surgery", pet.surgery)
+            .addBodyParameter("vaccination", pet.vaccination)
+            .addBodyParameter("owner_id", pet.owner_id)
+            .setTag("new pet")
+            .setPriority(Priority.LOW)
+            .build()
+            .getAsObject(UserResponse::class.java, object: ParsedRequestListener<UserResponse>{
+
+                override fun onResponse(response: UserResponse?) {
+                    response?.apply {
+                        success.apply {
+                            Log.i("result", "Status: ${success}")
+                        }
+
+                        user.apply {
+                            UserSession.currentUser = user
+                        }
+
+                        token.apply {
+                            UserSession.token = token
+                        }
+                    }
+                }
+
+                override fun onError(anError: ANError?) {
+                    Log.e("error", "No se registro el pet")
+                }
+            })
+
+
 
     }
 
 
+
+    fun savePet(){
+        val pet = Pet("" ,textInputPetName.text.toString(), speciesRadioButtonText, datePickerTextView.text.toString(), genderRadioButtonText, textWeight.text.toString(), textVaccines.text.toString(), textDisease.text.toString(), textSurgeries.text.toString(), "5ceb24113fa85600178719f5" )
+        Log.d("species",speciesRadioButtonText)
+        Log.d("gender", genderRadioButtonText)
+
+        val url = "https://happy-paws-api.herokuapp.com/api/pets"
+        val jsonBody=JSONObject()
+        jsonBody.put("name", pet.name)
+        jsonBody.put("species", pet.species )
+        jsonBody.put("birthdate", pet.birthdate)
+        jsonBody.put("gender", genderRadioButtonText)
+        jsonBody.put("weight", pet.weight)
+        jsonBody.put("disease", pet.disease )
+        jsonBody.put("surgery", pet.surgery)
+        jsonBody.put("vaccination", pet.vaccination)
+        jsonBody.put("owner_id", "5ceb24113fa85600178719f5")
+
+        val requestBody=jsonBody.toString()
+
+        val reviewRequest = object: JsonObjectRequest(Method.POST, url, null,Response.Listener {
+                response ->
+            try {
+
+            }catch (e: JSONException){
+                Log.d("ERROR", e.localizedMessage)
+            }
+        },Response.ErrorListener {
+                error->
+            Log.d("ERROR"," Could not find $error")
+        }){
+            override fun getBodyContentType(): String {
+                return "application/json; charset=utf-8"
+            }
+
+            override fun getBody(): ByteArray {
+                return requestBody.toByteArray()
+            }
+
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String,String>()
+                headers.put("Authorization", HappyPawsApi.API_KEY)
+                return headers
+            }
+        }
+        Volley.newRequestQueue(applicationContext).add(reviewRequest)
+    }
 
 
 }
