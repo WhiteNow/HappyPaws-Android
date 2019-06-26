@@ -6,7 +6,7 @@ class HappyPawsApi {
     companion object {
 
         val BASE_URL = "https://happy-paws-api.herokuapp.com/api"
-        val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjp7ImlkIjoiNWNlYjI0MTEzZmE4NTYwMDE3ODcxOWY1IiwidGltZXN0YW1wIjoxNTU5MjMzNDA5MDI4fSwiaWF0IjoxNTU5MjMzNDA5LCJleHAiOjE1NTk0MTM0MDl9.noyanv1pO_KH124ySG4nyRICt-KF-dq1wmep2Uimmic"
+        val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uIjp7ImlkIjoiNWQxMmVkYTY4NjdlNWEwMDE3MGEzMmI3IiwidGltZXN0YW1wIjoxNTYxNTIxNTkzNjAwfSwiaWF0IjoxNTYxNTIxNTkzLCJleHAiOjE1NjE3MDE1OTN9.ZeegvexWWydUIDaCo9q1SfvLegXghrf6kksY_5hWzW0"
 
 
         fun petsUrl(): String {

@@ -2,6 +2,7 @@ package pe.edu.upc.happypaws.controllers.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_menu.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import pe.edu.upc.happypaws.R
 import pe.edu.upc.happypaws.controllers.fragments.MenuFragment
 import pe.edu.upc.happypaws.controllers.fragments.ProfileFragment
@@ -25,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigateTo(navigation.menu.findItem(R.id.navigation_profile))
+        navigateTo(navigation.menu.findItem(R.id.navigation_menu))
+
+
     }
 
     private fun getFragmentFor(item: MenuItem) : Fragment {

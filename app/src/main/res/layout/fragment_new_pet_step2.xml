@@ -11,10 +11,10 @@
     <Button
             android:text="Siguiente"
             android:layout_width="234dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:id="@+id/newPetStep2ButtonNext"
             android:backgroundTint="#A9CCBD"
-            android:textColor="@android:color/white" android:textSize="24sp"
+            android:textColor="@android:color/white" android:textSize="16sp"
             android:fontFamily="sans-serif"
             android:background="@drawable/btn_roundshape"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_empty_border"
                 android:textAlignment="center"
-                android:hint="Peso" android:textSize="20sp" android:id="@+id/textWeight"
+                android:hint="Peso" android:textSize="16sp" android:id="@+id/textWeight"
                 android:singleLine="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 

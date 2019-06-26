@@ -32,7 +32,9 @@ import com.android.volley.Response
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
 import org.json.JSONObject
+import pe.edu.upc.happypaws.models.UserSession
 import pe.edu.upc.happypaws.networking.HappyPawsApi
+import pe.edu.upc.happypaws.networking.UserResponse
 
 
 class NewPetActivity : AppCompatActivity(),NewPetStep1.OnFragmentInteractionListener, NewPetStep2.OnFragmentInteractionListener, NewPetStep3.OnFragmentInteractionListener{
