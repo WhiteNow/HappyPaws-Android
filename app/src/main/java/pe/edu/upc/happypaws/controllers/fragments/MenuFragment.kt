@@ -28,13 +28,16 @@ import kotlinx.android.synthetic.main.fragment_menu.*
 import pe.edu.upc.happypaws.R
 
 import pe.edu.upc.happypaws.adapters.MenuAdapter
+import pe.edu.upc.happypaws.adapters.TaskAdapter
 import pe.edu.upc.happypaws.controllers.activities.AddTaskActivity
 import pe.edu.upc.happypaws.models.Pet
 import pe.edu.upc.happypaws.networking.HappyPawsApi
 import pe.edu.upc.happypaws.networking.PetsResponse
 
 import pe.edu.upc.happypaws.controllers.activities.NewPetActivity
-
+import pe.edu.upc.happypaws.models.PetTask
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MenuFragment : Fragment() {
@@ -43,6 +46,7 @@ class MenuFragment : Fragment() {
     var pets = ArrayList<Pet>()
 
     lateinit var petRecycler: RecyclerView
+    lateinit var taskRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,6 +64,13 @@ class MenuFragment : Fragment() {
         button_task.setOnClickListener {
             val intent = Intent(activity, AddTaskActivity::class.java)
             startActivity(intent)
+        }
+
+        taskRecyclerView = taks_recycler
+        taskRecyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = TaskAdapter(listOf(PetTask("1","Bañar a pelusa","Recomandable cada semana",false,"1",Date()),
+                PetTask("1","Sacar a pasear pelusa","Hacerlo cada noche",false,"1",Date())))
         }
     }
 

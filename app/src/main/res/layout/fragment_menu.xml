@@ -53,8 +53,30 @@
                                                                            android:layout_marginEnd="20dp"
                                                                            android:layout_marginBottom="20dp"
                                                                            android:src="@drawable/ic_add_white_24dp"
-                                                                           android:backgroundTint="#e9aeb0"
+                                                                           app:backgroundTint="#e9aeb0"
                                                                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+            android:id="@+id/text_task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TAREAS"
+            android:fontFamily="@font/baloo"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/button_task"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="24dp"
+    />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/taks_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/text_task_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

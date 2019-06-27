@@ -9,7 +9,7 @@
 
     <ImageView
             android:id="@+id/logo_image"
-            android:src="@drawable/paw"
+            android:src="@drawable/paw_logo"
             android:layout_width="@dimen/logo_dimen"
             android:layout_height="@dimen/logo_dimen"
             app:layout_constraintStart_toStartOf="parent"

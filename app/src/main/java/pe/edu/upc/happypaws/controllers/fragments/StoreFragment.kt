@@ -27,6 +27,7 @@ class StoreFragment : Fragment() {
 
     val TAG = "StoreTag"
     lateinit var serviceRecycler: RecyclerView
+    lateinit var foodRecyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +59,12 @@ class StoreFragment : Fragment() {
                             }
                             serviceRecycler = services_recycler
                             serviceRecycler.apply {
+                                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                                adapter = PromosAdapter(advertisements)
+                            }
+
+                            foodRecyclerView = food_recycler
+                            foodRecyclerView.apply {
                                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                                 adapter = PromosAdapter(advertisements)
                             }
